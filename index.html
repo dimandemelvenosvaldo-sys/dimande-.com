@@ -231,8 +231,8 @@
 
   .card-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+    gap:24px;
   }
   .index-card{
     background:var(--card);
@@ -244,7 +244,6 @@
     transition:border-color .2s, transform .2s;
     display:flex;
     flex-direction:column;
-    min-height:220px;
   }
   .index-card:hover{border-color:var(--amber);transform:translateY(-3px);}
   .index-card::before{
@@ -258,24 +257,45 @@
     transition:border-color .2s;
   }
   .index-card:hover::before{border-color:transparent var(--amber) transparent transparent;}
+
+  /* Estilo da Imagem do Projeto */
+  .card-img-wrap{
+    width:calc(100% + 44px);
+    margin:-22px -22px 18px -22px;
+    height:160px;
+    overflow:hidden;
+    background:var(--ink);
+    border-bottom:1px solid var(--card-border);
+  }
+  .card-img-wrap img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .3s ease;
+  }
+  .index-card:hover .card-img-wrap img{
+    transform:scale(1.04);
+  }
+
   .card-id{
     font-family:'IBM Plex Mono', monospace;
     font-size:11px;
     color:var(--amber);
-    margin-bottom:14px;
+    margin-bottom:10px;
   }
   .index-card h3{font-size:19px;margin-bottom:8px;}
   .index-card p{
     color:var(--paper-dim);
     font-size:13.5px;
     flex:1;
-    margin:0 0 16px;
+    margin:0 0 20px;
   }
   .card-footer{
     display:flex;
     justify-content:space-between;
     align-items:center;
     font-size:12px;
+    margin-top:auto;
   }
   .card-tag{
     font-family:'IBM Plex Mono', monospace;
@@ -472,35 +492,79 @@
       </div>
 
       <div class="card-grid" id="appGrid">
+
+        <!-- PROJETO 1 -->
         <div class="index-card reveal" data-cat="web">
+          <div class="card-img-wrap">
+            <!-- Substitua 'imagens/dicionario.jpg' pelo caminho da sua imagem -->
+            <img src="tradutor.png" alt="Dicionário Português-Changana" onerror="this.style.display='none'">
+          </div>
           <span class="card-id mono">APP-01</span>
-          <h3>Nome do App Um</h3>
-          <p>Descrição curta do que esse aplicativo resolve e para quem ele serve.</p>
+          <h3>Dicionário Português-Changana</h3>
+          <p>Plataforma digital para tradução, busca lexical e preservação da língua Changana.</p>
           <div class="card-footer">
             <span class="card-tag">Web</span>
-            <a href="#" class="card-link">Abrir app →</a>
+            <!-- Cole o link do seu GitHub ou do app no href abaixo -->
+            <a href="https://dimandemelvenosvaldo-sys.github.io/dicionario-changana/" class="card-link" target="_blank" rel="noopener">Ver no GitHub →</a>
           </div>
         </div>
 
-        <div class="index-card reveal" data-cat="mobile">
-          <span class="card-id mono">APP-02</span>
-          <h3>Nome do App Dois</h3>
-          <p>Descrição curta do que esse aplicativo resolve e para quem ele serve.</p>
-          <div class="card-footer">
-            <span class="card-tag">Mobile</span>
-            <a href="#" class="card-link">Ver na loja →</a>
-          </div>
-        </div>
-
+        <!-- PROJETO 2 -->
         <div class="index-card reveal" data-cat="ferramenta">
-          <span class="card-id mono">APP-03</span>
-          <h3>Nome da Ferramenta</h3>
-          <p>Descrição curta do que essa ferramenta faz e o problema que resolve no dia a dia.</p>
+          <div class="card-img-wrap">
+            <img src="imagens/porto-maputo.jpg" alt="Porto de Maputo" onerror="this.style.display='none'">
+          </div>
+          <span class="card-id mono">APP-02</span>
+          <h3>WeatherPro</h3>
+          <p>WeatherPro é uma plataforma moderna de previsão do tempo que permite consultar rapidamente as condições meteorológicas de diferentes cidades. Apresenta temperatura, humidade, vento, previsão dos próximos dias, condições climáticas e gráficos de forma simples, visual e intuitiva..</p>
           <div class="card-footer">
             <span class="card-tag">Ferramenta</span>
-            <a href="#" class="card-link">Abrir app →</a>
+            <a href="https://dimandemelvenosvaldo-sys.github.io/WeatherPro/" class="card-link" target="_blank" rel="noopener">Ver no GitHub →</a>
           </div>
         </div>
+
+        <!-- PROJETO 3 -->
+        <div class="index-card reveal" data-cat="web">
+          <div class="card-img-wrap">
+            <img src="imagens/academia-mz.jpg" alt="Academia Digital MZ" onerror="this.style.display='none'">
+          </div>
+          <span class="card-id mono">APP-03</span>
+          <h3>Academia Digital MZ</h3>
+          <p>Plataforma e-learning com integração de gateways de pagamento M-Pesa e e-Mola via PaySuite.</p>
+          <div class="card-footer">
+            <span class="card-tag">Web</span>
+            <a href="https://github.com/SEU_USUARIO/academia-digital-mz" class="card-link" target="_blank" rel="noopener">Ver no GitHub →</a>
+          </div>
+        </div>
+
+        <!-- PROJETO 4 -->
+        <div class="index-card reveal" data-cat="ferramenta">
+          <div class="card-img-wrap">
+            <img src="imagens/gestao-filas.jpg" alt="Gestão de Filas" onerror="this.style.display='none'">
+          </div>
+          <span class="card-id mono">APP-04</span>
+          <h3>Sistema de Gestão de Filas Bancárias</h3>
+          <p>Interface web para organização, chamadas de senhas e atendimento sequencial de clientes.</p>
+          <div class="card-footer">
+            <span class="card-tag">Ferramenta</span>
+            <a href="https://github.com/SEU_USUARIO/gestao-filas" class="card-link" target="_blank" rel="noopener">Ver no GitHub →</a>
+          </div>
+        </div>
+
+        <!-- PROJETO 5 -->
+        <div class="index-card reveal" data-cat="mobile">
+          <div class="card-img-wrap">
+            <img src="imagens/sombras-cabo.jpg" alt="Sombras de Cabo" onerror="this.style.display='none'">
+          </div>
+          <span class="card-id mono">APP-05</span>
+          <h3>Sombras de Cabo: Caminho do Guerreiro</h3>
+          <p>Arquitetura e desenvolvimento C++/SFML para jogo arcade 2D de luta ambientado em Moçambique.</p>
+          <div class="card-footer">
+            <span class="card-tag">Mobile</span>
+            <a href="https://github.com/SEU_USUARIO/sombras-de-cabo" class="card-link" target="_blank" rel="noopener">Ver no GitHub →</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -561,16 +625,16 @@
       <div class="social-row">
         <a href="mailto:dimandemelvenosvaldo@gmail.com" class="btn btn-ghost">E-mail</a>
         <a href="tel:+258852272385" class="btn btn-ghost">Telefone</a>
-        <a href="WhatsApp:+258852272385" class="btn btn-ghost">whatsapp</a>
-        <a href="https://www.facebook.com/me/" class="btn btn-ghost">Facebook</a>
-       <a href="https://www.linkedin.com/in/melven-osvaldo-dimande-244303421/" class="btn btn-ghost">LinkedIn</a>
+        <a href="https://wa.me/258852272385" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.facebook.com/me/" class="btn btn-ghost" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.linkedin.com/in/melven-osvaldo-dimande-244303421/" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-  ©  Melven Osvaldo Custódio Dimande — construído e mantido com cuidado.
+  © Melven Osvaldo Custódio Dimande — construído e mantido com cuidado.
 </footer>
 
 <script>
